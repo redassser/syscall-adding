@@ -149,3 +149,26 @@ after this its time to recompile. Took about 5 minutes
 
 works as intended ![final capture uname](https://github.com/redassser/syscall-adding/assets/40395425/74325e2a-6e3b-4266-bb19-cceecaae3fa5)
 
+
+
+
+ALMOST forgot my user code
+
+```C
+#define _GNU_SOURCE
+#include <unistd.h>
+#include <stdio.h>
+#include <sys/syscall.h>
+#define STDOUT 1
+int main(int argc, char **argv) {
+	char msg[] = "What is the real message?";
+	char msg2[] = "This string is too long to fit in 32 chars so it will not get through";
+	long res = 0; long res2 = 0;
+	res = syscall(451, &msg);
+	res2 = syscall(451, &msg2);
+	printf("Return value of short msg: %i\n", res);
+	printf("Return value of long msg: %i\n", res2);
+	return 0;
+}
+
+```
