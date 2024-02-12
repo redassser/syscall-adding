@@ -12,7 +12,8 @@ Following the guide provided by my professor for our homework.
    2. `sudo apt install linux-source` installed linux source
    3. linux 6.1 source decompressed into home dir. It's 1.5 G
    4. renamed directory to /pa2
-   5. [Image of ls pa2]
+   5. ![ls pa2](https://github.com/redassser/syscall-adding/assets/40395425/bba50ed1-566a-45c0-9899-6942242141e6)
+
    6. config copied from known good kernel
    7. Changed localversion
 
@@ -28,10 +29,12 @@ Following the guide provided by my professor for our homework.
       2. Paused for like 20 minutes.
       3. Finished around 9 PM
    9. Size after compile is 19G
-   10. Installed modules [image of du s h]
+   10. Installed modules ![du s h modules](https://github.com/redassser/syscall-adding/assets/40395425/6bc0af16-e9ba-4426-8e7c-6ebd1614906b)
+
    11. Time to install.
    12. It boots!
-   13. [Image of uname kernel]
+   13. ![uname kernel](https://github.com/redassser/syscall-adding/assets/40395425/2342eb57-bfb3-41bb-b377-836aa2f11ba0)
+
 After this I made a new backup copy of the kernel in another directory.
 3. Creating a kernel module
    1. Made a file called rpiedrah.c that will hold the new module
@@ -55,7 +58,8 @@ MODULE_LICENSE("Dual BSD/GPL");
 
 WORKING!!!
 
-[Image Module loaded]
+![module loaded](https://github.com/redassser/syscall-adding/assets/40395425/e6e12664-a5f1-41fc-80f2-8716cf5542d0)
+
 
 4. Adding a System Call
    1. edited pa2/arch/x86/entry/syscalls/syscall_64.tbl or whatever to have the new syscall
@@ -104,7 +108,8 @@ int main(int argc, char **argv) {
 ```
 
 IT FUCKING WORKED!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-[Image of it fucking working . png]
+![testing worked!!!!](https://github.com/redassser/syscall-adding/assets/40395425/23dd6944-80fd-4086-addb-b319fbd28952)
+
 
 Now for the real syscall code.
 
@@ -142,4 +147,5 @@ SYSCALL_DEFINE1(rpiedrah_syscall, char __user *, st) {
 
 after this its time to recompile. Took about 5 minutes
 
-works as intended [Image final capture]
+works as intended ![final capture uname](https://github.com/redassser/syscall-adding/assets/40395425/74325e2a-6e3b-4266-bb19-cceecaae3fa5)
+
